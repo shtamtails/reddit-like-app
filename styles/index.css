@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.subcomment > li:before {
+  content: "| ";
+}
+
+li {
+  display: list-item;
+  list-style-type: none;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
