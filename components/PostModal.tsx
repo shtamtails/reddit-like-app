@@ -5,7 +5,7 @@ import { readFromLocalStorage } from "../utils/localStorage";
 import { Modal } from "./UI/Modal";
 
 export const PostModal: React.FC<any> = ({ handleCloseModal }) => {
-  const [addPost, { data }] = useMutation(ADD_POST);
+  const [addPost] = useMutation(ADD_POST);
   const [error, setError] = useState("");
 
   const descRef = useRef<HTMLInputElement>(null);
@@ -21,8 +21,9 @@ export const PostModal: React.FC<any> = ({ handleCloseModal }) => {
             url: urlRef.current?.value,
             description: descRef.current?.value,
           },
+        }).then(() => {
+          handleCloseModal();
         });
-        handleCloseModal();
       } else {
         setError("Please fill all fields");
       }

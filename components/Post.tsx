@@ -1,11 +1,7 @@
-import { useMutation, useSubscription } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { ThumbUpIcon } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
 import { Link, Vote } from "../model/endpoint";
-import { ADD_POST } from "../queries/addPost";
-import { GET_ALL_LINKS } from "../queries/getAllPosts";
-import { GET_PAGINATED_LINKS, USE_GET_PAGINATED_LINKS } from "../queries/getPaginatedLinks";
-import { SUBSCRIBE_TO_POSTS } from "../queries/subscribeToPosts";
 import { UPVOTE_POST } from "../queries/upvotePost";
 import { readFromLocalStorage } from "../utils/localStorage";
 import { Comments } from "./Comments";
