@@ -43,6 +43,7 @@ export const Post: React.FC<IPostProps> = ({ post }) => {
     }
   };
 
+  /* Checking if the user has already voted for the post. */
   useEffect(() => {
     const username = readFromLocalStorage("name");
     const isVoted = !!post.votes.filter((vote) => vote.user.name === username)[0];

@@ -13,6 +13,12 @@ export default function Index({ data }: any) {
   const [postsToSkip, setPostsToSkip] = useState(10);
   const [posts, setPosts] = useState<Link[] | null>(data.feed.links);
 
+  /**
+   * We're using the `fetchMore` function to get the next 10 posts from the server and then we're adding
+   * them to the existing posts
+   * @param {IGetLinks}  - take - the number of posts to take
+   */
+
   const fetchMore = async ({ take, skip }: IGetLinks) => {
     const { data } = await GET_PAGINATED_LINKS({ take, skip });
     setPostsToSkip(postsToSkip + 10);
